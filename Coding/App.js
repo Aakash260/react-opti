@@ -13,8 +13,9 @@ import Login from "./Components/Login";
 import RestaurantMenu from "./Components/RestaurantMenu";
 import Profile from "./Components/ProfileClass";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom"; // for routing our page import createBrowserRouter and RouterProvider for providing router & Outlet for children component for nested routing
-
-
+import {Provider} from"react-redux"
+import Cart from "./Components/Cart";
+import store from "./Utils/store"
 /* My Food App structure will look like this, 
             1) Header
                 - Logo
@@ -37,11 +38,11 @@ import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom"; 
 const About=lazy(() => import('./Components/About'));
 const AppLayout = () => {
   return (
-    <React.Fragment>
+    <Provider store={store}>
       <Header />
       <Outlet />
       <Footer />
-    </React.Fragment>
+    </Provider>
   );
 };
 
@@ -75,12 +76,17 @@ const appRouter = createBrowserRouter([
         path: "restaurant/:resId",
         element: <RestaurantMenu />,
       },
+      {
+        path: "cart",
+        element: <Cart />,
+      }
     ],
   },
   {
     path: "login",
     element: <Login />,
   },
+  
 ]);
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(<RouterProvider router={appRouter} />); // render RouterProvider and use router as props and pass value appRouter

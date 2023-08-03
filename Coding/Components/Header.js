@@ -3,7 +3,7 @@ import FoodFireLogo from "../Images/Food Fire Logo.png";
 import { Link } from "react-router-dom"; // imported Link for client side routing
 import { useNavigate } from "react-router-dom";
   import useOnline from "../Hooks/useOnline";
-   
+import { useSelector } from "react-redux";
   
   
 // Title component for display logo
@@ -31,7 +31,8 @@ const Header = () => {
     token?.length === 100 ? true : false
   );
   const navigate = useNavigate();
-
+const cardItems=useSelector(store=>store.cart.items);
+  console.log("🚀 ~ file: Header.js:35 ~ Header ~ cardItems:", cardItems)
   return (
     <div className="header">
       <Title />
@@ -48,7 +49,11 @@ const Header = () => {
             <Link to="/contact">Contact</Link>
           </li>
           <li>
+            <Link to="/cart">Cart</Link>
+          </li>
+          <li>
             <i className="fa-solid fa-cart-shopping"></i>
+           
           </li>
           <li>
             {/* use conditional rendering for login and logout */}
