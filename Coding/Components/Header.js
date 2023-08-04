@@ -1,5 +1,5 @@
 import { useState } from "react";
-import FoodFireLogo from "../Images/Food Fire Logo.png";
+ 
 import { Link } from "react-router-dom"; // imported Link for client side routing
 import { useNavigate } from "react-router-dom";
   import useOnline from "../Hooks/useOnline";
@@ -13,7 +13,7 @@ const Title = () => {
   return<><a href="/">
     <img
       className="logo"
-      src={FoodFireLogo}
+      src="https://user-assets.sxlcdn.com/images/60446/Fj4zyXl_IJY6hvAxpnk_lhXuQopJ.jpg?imageMogr2/strip/auto-orient/thumbnail/1200x630%3E/quality/90!/interlace/1/format/jpg"
       alt="Food Fire"
       title="Food Fire"
     />
@@ -32,7 +32,7 @@ const Header = () => {
   );
   const navigate = useNavigate();
 const cardItems=useSelector(store=>store.cart.items);
-  console.log("🚀 ~ file: Header.js:35 ~ Header ~ cardItems:", cardItems)
+  
   return (
     <div className="header">
       <Title />

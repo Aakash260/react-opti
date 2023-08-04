@@ -12,6 +12,8 @@ import useOnline from "../Hooks/useOnline"; // imported custom hook useOnline wh
 import UserOffline from "./UserOffline";
 import { useDispatch } from "react-redux";
 import { addItems } from "./cartSlice"
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const RestaurantMenu = () => {
   const { resId } = useParams(); // call useParams and get value of restaurant id using object destructuring
   const [restaurant, menuItems] = useResMenuData(
@@ -30,7 +32,9 @@ const RestaurantMenu = () => {
 const dispatch=useDispatch();
 const handleAction=(item) => {
   dispatch(addItems(item));
+  toast("Added to Cart!");
 }
+
   return !restaurant ? (
     <MenuShimmer />
   ) : (
@@ -96,8 +100,19 @@ const handleAction=(item) => {
                       alt={item?.name}
                     />
                   )}
-                  <button className="add-btn" onClick={()=>handleAction(item)}> ADD +</button>
-               
+                 <button className="add-btn" onClick={()=>handleAction(item)}> ADD +</button>
+                 <ToastContainer
+position="top-right"
+autoClose={2000}
+hideProgressBar={false}
+newestOnTop={false}
+closeOnClick
+rtl={false}
+pauseOnFocusLoss
+draggable
+pauseOnHover
+theme="light"
+/>
                 </div>
               </div>
             ))}

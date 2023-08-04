@@ -6,31 +6,7 @@ const About = () => {
   const [show, setShow] = useState(false);
   return (
     <div>
-      <div className="about-profile-container">
-        {/* used ternary condition to Show my profile and Hide my Profile and using nested routing */}
-        {show ? (
-          <>
-          <Link to={"/about"}>
-            <button
-              className="about-profile-button"
-              onClick={() => setShow(false)}
-            >
-              Hide My Profile
-            </button>
-            </Link>
-            <Outlet />
-          </>
-        ) : (
-          <Link to={"profile"}>
-            <button
-              className="about-profile-button"
-              onClick={() => setShow(true)}
-            >
-              Show My Profile
-            </button>
-          </Link>
-        )}
-      </div>
+      
       <div className="about-container">
         <div className="about-left">
           <h1>

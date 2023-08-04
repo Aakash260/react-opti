@@ -20,7 +20,7 @@ a {
 
 /* create global variable with :root selector Start*/
 :root {
-  --header-bg-color: rgb(255, 255, 255);
+  --header-bg-color:var(--dark-blue);
   --footer-bg-color: rgb(255, 255, 255);
   --body-bg-color: #e3e3e3;
   --input-bg: #f2f2f2;
@@ -30,7 +30,7 @@ a {
   --light-text-title: #353535;
   --light-green: #00ad1d;
   --dark-green: #016034;
-  --orange: #d97919;
+  --orange: var(--dark-blue);
   --light-orange: #ffaf60;
   --dark-orange: #c26100;
   --x-dark-orange: rgb(157, 42, 1);
@@ -79,6 +79,7 @@ a {
 
 .nav-items > ul > li {
   padding: 10px;
+  color: white;
 }
 
 .nav-items > ul > li .fa-solid{
@@ -88,7 +89,7 @@ a {
 .nav-items > ul > li:hover,
 .nav-items > ul > li:hover .logout-btn,
 .nav-items > ul > li:hover .login-btn {
-  background-color: var(--orange);
+  background-color:blue;
   border-radius: 5px;
   cursor: pointer;
   color: var(--white);
@@ -96,12 +97,12 @@ a {
 
 .nav-items > ul > li .logout-btn,
 .nav-items > ul > li .login-btn {
-  color: var(--light-text-color);
+  
   border: none;
   border-radius: 5px;
   background-color: Transparent;
-  font-size: inherit;
-  font-weight: 700;
+  font-size: 30;
+  font-weight: 900;
   cursor: pointer;
 }
 
@@ -1093,4 +1094,12 @@ a {
   .login-form {
     max-width: 280px;
   }
+}
+.margin{
+  margin-top: 100px;
+}
+
+.rem{
+  background: red;
+  color: white
 }

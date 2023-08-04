@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
-import { Formik } from "formik"; // import Formik from formik
-import * as Yup from "yup"; // import Yup from yup
+import { Formik } from "formik";  
+import * as Yup from "yup"; 
 import { useNavigate } from "react-router-dom";
 
-// create a schema for validation
+ 
 const schema = Yup.object().shape({
   email: Yup.string()
     .required("Email is a required field")

@@ -1,5 +1,4 @@
-// ## Namaste React Course by Akshay Saini
-// Chapter 09 - Optimizing our App
+ 
 
 import React ,{lazy, Suspense} from "react";
 import ReactDOM from "react-dom/client";
@@ -11,7 +10,7 @@ import Error from "./Components/Error";
 import Contact from "./Components/Contact";
 import Login from "./Components/Login";
 import RestaurantMenu from "./Components/RestaurantMenu";
-import Profile from "./Components/ProfileClass";
+ 
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom"; // for routing our page import createBrowserRouter and RouterProvider for providing router & Outlet for children component for nested routing
 import {Provider} from"react-redux"
 import Cart from "./Components/Cart";
@@ -34,7 +33,7 @@ import store from "./Utils/store"
        
 */
 
-// AppLayout component to render: Header, Outlet(it contain children component like body, About, Restaurant Menu etc) and Footer Component
+ 
 const About=lazy(() => import('./Components/About'));
 const AppLayout = () => {
   return (
@@ -63,10 +62,10 @@ const appRouter = createBrowserRouter([
         element: <Suspense>
           <About />
         </Suspense>,
-        children: [{ // nested routing
-          path: "profile",
-          element: <Profile />,
-        }]
+        // children: [{ // nested routing
+        //   path: "profile",
+        //   element: <Profile />,
+        // }]
       },
       {
         path: "contact",
