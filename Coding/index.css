@@ -376,7 +376,7 @@ a {
 }
 .add-btn {
   background-color: var(--orange);
-  color: var(--text-color);
+  color: #fff;
   padding: 8px 25px;
   cursor: pointer;
   outline: none;
