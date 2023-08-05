@@ -1,27 +1,27 @@
 import { useState } from "react";
- 
 import { Link } from "react-router-dom"; // imported Link for client side routing
 import { useNavigate } from "react-router-dom";
-  import useOnline from "../Hooks/useOnline";
+import useOnline from "../Hooks/useOnline";
 import { useSelector } from "react-redux";
-  
+ 
   
 // Title component for display logo
 const Title = () => {
   const isConnected=useOnline()
   
   return<><a href="/">
-    <img
+     <img
+    data-testid="logo"
       className="logo"
-      src="https://user-assets.sxlcdn.com/images/60446/Fj4zyXl_IJY6hvAxpnk_lhXuQopJ.jpg?imageMogr2/strip/auto-orient/thumbnail/1200x630%3E/quality/90!/interlace/1/format/jpg"
-      alt="Food Fire"
-      title="Food Fire"
-    />
+      src={"http://user-assets.sxlcdn.com/images/60446/Fj4zyXl_IJY6hvAxpnk_lhXuQopJ.jpg?imageMogr2/strip/auto-orient/thumbnail/1200x630%3E/quality/90!/interlace/1/format/jpg"}
+      alt="FowlBowl"
+      title="FoodBowl"
+    /> 
   </a>
   {isConnected?"🟢Live":"🔴OffLine"}
  </>
 }
-
+ 
 // Header component for header section: Logo, Nav Items
 const Header = () => {
   const token = localStorage.getItem("token");
@@ -35,7 +35,7 @@ const cardItems=useSelector(store=>store.cart.items);
   
   return (
     <div className="header">
-      <Title />
+      <Title />     
       <div className="nav-items">
         <ul>
           <li>
